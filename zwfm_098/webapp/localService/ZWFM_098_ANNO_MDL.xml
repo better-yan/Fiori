@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../sap/zwfm_098_srv/$metadata">
+        <edmx:Include Namespace="ZWFM_098_SRV" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="zwfm_098_anno_mdl.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="ZWFM_098_SRV.ZWFM_I_FKDMXType/zbx_item">
+                <Annotation Term="UI.HiddenFilter"/>
+            </Annotations>
+            <Annotations Target="ZWFM_098_SRV.ZWFM_I_FKDMXType/apv_statetxt">
+                <Annotation Term="UI.HiddenFilter"/>
+            </Annotations>
+            <Annotations Target="ZWFM_098_SRV.ZWFM_I_FKDMXType/statuspaytxt">
+                <Annotation Term="UI.HiddenFilter"/>
+            </Annotations>
+            <Annotations Target="ZWFM_098_SRV.ZWFM_I_FKDMXType/statusbilltxt">
+                <Annotation Term="UI.HiddenFilter"/>
+            </Annotations>
+            <Annotations Target="ZWFM_098_SRV.ZWFM_I_FKDMX1Type/blarttxt">
+                <Annotation Term="UI.HiddenFilter"/>
+            </Annotations>
+            <Annotations Target="ZWFM_098_SRV.ZWFM_I_FKDMX1Type/apv_statetxt">
+                <Annotation Term="UI.HiddenFilter"/>
+            </Annotations>
+            <Annotations Target="ZWFM_098_SRV.ZWFM_I_FKDMX1Type/qkxz">
+                <Annotation Term="UI.HiddenFilter"/>
+            </Annotations>
+            <Annotations Target="ZWFM_098_SRV.ZWFM_I_FKDMX1Type/qkxzmxtxt">
+                <Annotation Term="UI.HiddenFilter"/>
+            </Annotations>
+            <Annotations Target="ZWFM_098_SRV.ZWFM_I_FKDMX1Type/zfkxzid">
+                <Annotation Term="UI.HiddenFilter"/>
+            </Annotations>
+            <Annotations Target="ZWFM_098_SRV.ZWFM_I_FKDMX1Type/statushxtxt">
+                <Annotation Term="UI.HiddenFilter"/>
+            </Annotations>
+            <Annotations Target="ZWFM_098_SRV.ZWFM_I_FKDMX1Type/statuspaytxt">
+                <Annotation Term="UI.HiddenFilter"/>
+            </Annotations>
+            <Annotations Target="ZWFM_098_SRV.ZWFM_I_FKDMX1Type/statusbilltxt">
+                <Annotation Term="UI.HiddenFilter"/>
+            </Annotations>
+            <Annotations Target="ZWFM_098_SRV.ZWFM_I_FKDMX1Type/budgetid">
+                <Annotation Term="UI.HiddenFilter"/>
+            </Annotations>
+            <Annotations Target="ZWFM_098_SRV.ZWFM_I_FKDMX1Type/proj_id">
+                <Annotation Term="UI.HiddenFilter"/>
+            </Annotations>
+            <Annotations Target="ZWFM_098_SRV.ZWFM_I_FKDMX1Type/ctypetxt">
+                <Annotation Term="UI.HiddenFilter"/>
+            </Annotations>
+            <Annotations Target="ZWFM_098_SRV.ZWFM_I_FKDMX1Type/paystatus">
+                <Annotation Term="UI.HiddenFilter"/>
+            </Annotations>
+            <Annotations Target="ZWFM_098_SRV.ZWFM_I_FKDMX1Type">
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="单据类型"/>
+                            <PropertyValue Property="Value" Path="blarttxt"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="区域"/>
+                            <PropertyValue Property="Value" Path="area_name"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="公司"/>
+                            <PropertyValue Property="Value" Path="company_name"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="单号"/>
+                            <PropertyValue Property="Value" Path="docnr"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="主题"/>
+                            <PropertyValue Property="Value" Path="bktxt"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="填报人工号"/>
+                            <PropertyValue Property="Value" Path="usid"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="填报人"/>
+                            <PropertyValue Property="Value" Path="usnam"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="填报人部门"/>
+                            <PropertyValue Property="Value" Path="usnamdp"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="申请金额"/>
+                            <PropertyValue Property="Value" Path="payamt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="货币"/>
+                            <PropertyValue Property="Value" Path="waers"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="审批状态"/>
+                            <PropertyValue Property="Value" Path="apv_statetxt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="是否代付"/>
+                            <PropertyValue Property="Value" Path="isdftxt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="保证金类型"/>
+                            <PropertyValue Property="Value" Path="bzjlxtxt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="保证金"/>
+                            <PropertyValue Property="Value" Path="zzbj"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="请款性质"/>
+                            <PropertyValue Property="Value" Path="qkxz"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="请款性质明细"/>
+                            <PropertyValue Property="Value" Path="qkxzmxtxt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="付款性质"/>
+                            <PropertyValue Property="Value" Path="zfkxz"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="核销状态"/>
+                            <PropertyValue Property="Value" Path="statushxtxt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="预计核销日期"/>
+                            <PropertyValue Property="Value" Path="yjdpsj"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="支付状态"/>
+                            <PropertyValue Property="Value" Path="statuspaytxt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="是否需要支付"/>
+                            <PropertyValue Property="Value" Path="ifzftxt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="扫描状态"/>
+                            <PropertyValue Property="Value" Path="statusbilltxt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="应付帐单号"/>
+                            <PropertyValue Property="Value" Path="pbillid"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="所属账期"/>
+                            <PropertyValue Property="Value" Path="zsszq"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="实际支付单位"/>
+                            <PropertyValue Property="Value" Path="zzfdw"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="支付公司"/>
+                            <PropertyValue Property="Value" Path="bukrszf"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="支付公司"/>
+                            <PropertyValue Property="Value" Path="bukrszftxt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="支付账号"/>
+                            <PropertyValue Property="Value" Path="zyhzh1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="支付银行"/>
+                            <PropertyValue Property="Value" Path="zkhh1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="供应商"/>
+                            <PropertyValue Property="Value" Path="zlifnr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="供应商"/>
+                            <PropertyValue Property="Value" Path="zlfname"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="收款户名"/>
+                            <PropertyValue Property="Value" Path="zyhzhmc2"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="收款银行"/>
+                            <PropertyValue Property="Value" Path="zkhh2"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="收款账号"/>
+                            <PropertyValue Property="Value" Path="zyhzh2"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="是否黑名单"/>
+                            <PropertyValue Property="Value" Path="zsfhmd"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="发票号码"/>
+                            <PropertyValue Property="Value" Path="zfphm"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="发票代码"/>
+                            <PropertyValue Property="Value" Path="zfpcode"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="预算科目"/>
+                            <PropertyValue Property="Value" Path="budget_name"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="预算单元"/>
+                            <PropertyValue Property="Value" Path="proj_name"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="承担公司"/>
+                            <PropertyValue Property="Value" Path="bukrscdtxt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="发票类型"/>
+                            <PropertyValue Property="Value" Path="ctypetxt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="发票金额（不含税）"/>
+                            <PropertyValue Property="Value" Path="price"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="税金"/>
+                            <PropertyValue Property="Value" Path="tax"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="税率"/>
+                            <PropertyValue Property="Value" Path="tax_rate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="发票金额（含税）"/>
+                            <PropertyValue Property="Value" Path="price_tax"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="申请金额"/>
+                            <PropertyValue Property="Value" Path="apl_price"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="申请金额（本币）"/>
+                            <PropertyValue Property="Value" Path="zapl_price"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="申请金额（不含税）"/>
+                            <PropertyValue Property="Value" Path="apl_pricent"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="支付金额"/>
+                            <PropertyValue Property="Value" Path="payprice"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="支付状态"/>
+                            <PropertyValue Property="Value" Path="paystatustxt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="已支付金额"/>
+                            <PropertyValue Property="Value" Path="yzfje"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="已止付金额"/>
+                            <PropertyValue Property="Value" Path="zyzfje"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="待核销金额"/>
+                            <PropertyValue Property="Value" Path="zdhxje"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="创建时间"/>
+                            <PropertyValue Property="Value" Path="erdat"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="提交审批日期"/>
+                            <PropertyValue Property="Value" Path="apdat"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="审批通过时间"/>
+                            <PropertyValue Property="Value" Path="appdt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="外部系统单据号"/>
+                            <PropertyValue Property="Value" Path="yid"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="资金付款单号"/>
+                            <PropertyValue Property="Value" Path="zpayreq"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="付款日期"/>
+                            <PropertyValue Property="Value" Path="zpaydate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="发薪单号"/>
+                            <PropertyValue Property="Value" Path="zfxdh"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="BPM单号"/>
+                            <PropertyValue Property="Value" Path="prcit"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="合同编号"/>
+                            <PropertyValue Property="Value" Path="htno"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="订单编号"/>
+                            <PropertyValue Property="Value" Path="orno"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="事项编号"/>
+                            <PropertyValue Property="Value" Path="zsx_id"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>blarttxt</PropertyPath>
+                        <PropertyPath>area_name</PropertyPath>
+                        <PropertyPath>company_name</PropertyPath>
+                        <PropertyPath>docnr</PropertyPath>
+                        <PropertyPath>bktxt</PropertyPath>
+                        <PropertyPath>usid</PropertyPath>
+                        <PropertyPath>usnam</PropertyPath>
+                        <PropertyPath>usnamdp</PropertyPath>
+                        <PropertyPath>payamt</PropertyPath>
+                        <PropertyPath>waers</PropertyPath>
+                        <PropertyPath>apv_statetxt</PropertyPath>
+                        <PropertyPath>isdftxt</PropertyPath>
+                        <PropertyPath>bzjlxtxt</PropertyPath>
+                        <PropertyPath>zzbj</PropertyPath>
+                        <PropertyPath>qkxz</PropertyPath>
+                        <PropertyPath>qkxzmxtxt</PropertyPath>
+                        <PropertyPath>zfkxz</PropertyPath>
+                        <PropertyPath>statushxtxt</PropertyPath>
+                        <PropertyPath>yjdpsj</PropertyPath>
+                        <PropertyPath>statuspaytxt</PropertyPath>
+                        <PropertyPath>ifzftxt</PropertyPath>
+                        <PropertyPath>statusbilltxt</PropertyPath>
+                        <PropertyPath>pbillid</PropertyPath>
+                        <PropertyPath>zsszq</PropertyPath>
+                        <PropertyPath>zzfdw</PropertyPath>
+                        <PropertyPath>bukrszf</PropertyPath>
+                        <PropertyPath>bukrszftxt</PropertyPath>
+                        <PropertyPath>zyhzh1</PropertyPath>
+                        <PropertyPath>zkhh1</PropertyPath>
+                        <PropertyPath>zlifnr</PropertyPath>
+                        <PropertyPath>zlfname</PropertyPath>
+                        <PropertyPath>zyhzhmc2</PropertyPath>
+                        <PropertyPath>zkhh2</PropertyPath>
+                        <PropertyPath>zyhzh2</PropertyPath>
+                        <PropertyPath>zsfhmd</PropertyPath>
+                        <PropertyPath>zfphm</PropertyPath>
+                        <PropertyPath>zfpcode</PropertyPath>
+                        <PropertyPath>budget_name</PropertyPath>
+                        <PropertyPath>proj_name</PropertyPath>
+                        <PropertyPath>bukrscdtxt</PropertyPath>
+                        <PropertyPath>ctypetxt</PropertyPath>
+                        <PropertyPath>price</PropertyPath>
+                        <PropertyPath>tax</PropertyPath>
+                        <PropertyPath>tax_rate</PropertyPath>
+                        <PropertyPath>price_tax</PropertyPath>
+                        <PropertyPath>apl_price</PropertyPath>
+                        <PropertyPath>zapl_price</PropertyPath>
+                        <PropertyPath>apl_pricent</PropertyPath>
+                        <PropertyPath>payprice</PropertyPath>
+                        <PropertyPath>paystatustxt</PropertyPath>
+                        <PropertyPath>yzfje</PropertyPath>
+                        <PropertyPath>zyzfje</PropertyPath>
+                        <PropertyPath>zdhxje</PropertyPath>
+                        <PropertyPath>erdat</PropertyPath>
+                        <PropertyPath>apdat</PropertyPath>
+                        <PropertyPath>appdt</PropertyPath>
+                        <PropertyPath>yid</PropertyPath>
+                        <PropertyPath>zpayreq</PropertyPath>
+                        <PropertyPath>zpaydate</PropertyPath>
+                        <PropertyPath>zfxdh</PropertyPath>
+                        <PropertyPath>prcit</PropertyPath>
+                        <PropertyPath>htno</PropertyPath>
+                        <PropertyPath>orno</PropertyPath>
+                        <PropertyPath>zsx_id</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

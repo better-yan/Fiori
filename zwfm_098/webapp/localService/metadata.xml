@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="http://wsap-s4-dev.xinchengyue.com:8000/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://wsap-s4-dev.xinchengyue.com:8000/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://wsap-s4-dev.xinchengyue.com:8000/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://wsap-s4-dev.xinchengyue.com:8000/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://wsap-s4-dev.xinchengyue.com:8000/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZWFM_098_SRV" xml:lang="zh" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZWCBC_I_DD07VTEXTType" sap:label="域名文本通用查询" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="domnm"/>
+                    <PropertyRef Name="domid"/>
+                </Key>
+                <Property Name="domnm" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="定义域名"/>
+                <Property Name="domid" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="domtt" sap:label="下限值" sap:quickinfo="域值：单值/上限"/>
+                <Property Name="domtt" Type="Edm.String" MaxLength="60" sap:label="简短描述" sap:quickinfo="固定值的短文本"/>
+            </EntityType>
+            <EntityType Name="ZWCBG_I_BUDGETITEMType" sap:label="预算科目数据" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="budget_id"/>
+                </Key>
+                <Property Name="budget_id" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="预算科目编码"/>
+                <Property Name="budget_name" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="预算科目名称"/>
+                <Property Name="budget_class" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="预算科目层级"/>
+                <Property Name="last_class" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="是否末级"/>
+                <Property Name="whsection" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="预算主数据映射关系"/>
+                <Property Name="parent_id" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="父级节点ID"/>
+                <Property Name="enable_status" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="启用状态"/>
+                <Property Name="fylb" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="费用类别"/>
+                <Property Name="fylbmc" Type="Edm.String" MaxLength="60" sap:label="简短描述" sap:quickinfo="固定值的短文本"/>
+                <Property Name="front_filter" Type="Edm.String" MaxLength="1" sap:display-format="NonNegative"/>
+            </EntityType>
+            <EntityType Name="ZWCBG_I_BUDGETUNITType" sap:label="预算单元数据" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="org_id"/>
+                </Key>
+                <Property Name="org_id" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="组织编码"/>
+                <Property Name="org_type" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="组织类型"/>
+                <Property Name="org_class" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="组织层级"/>
+                <Property Name="org_name" Type="Edm.String" MaxLength="100" sap:label="组织名称"/>
+                <Property Name="ywparentid" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="业务父级组织编码"/>
+                <Property Name="area_acr" Type="Edm.Decimal" Precision="17" Scale="2"/>
+                <Property Name="last_class" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="是否末级"/>
+            </EntityType>
+            <EntityType Name="ZWCFM_I_BUDGETITEMType" sap:label="预算科目数据_来源zwtmd0056a表" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="yearnf"/>
+                    <PropertyRef Name="budget_id"/>
+                </Key>
+                <Property Name="yearnf" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="年份"/>
+                <Property Name="budget_id" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="预算科目编码"/>
+                <Property Name="budget_name" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="预算科目名称"/>
+                <Property Name="budget_class" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="预算科目层级"/>
+                <Property Name="last_class" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="是否末级"/>
+                <Property Name="whsection" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="预算主数据映射关系"/>
+                <Property Name="parent_id" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="父级节点ID"/>
+                <Property Name="enable_status" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="启用状态"/>
+            </EntityType>
+            <EntityType Name="ZWCFM_I_BUDGETUNITType" sap:label="预算单元数据_来源zwtmd0012a表" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="org_id"/>
+                </Key>
+                <Property Name="org_id" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="组织编码"/>
+                <Property Name="org_type" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="组织类型"/>
+                <Property Name="org_class" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="组织层级"/>
+                <Property Name="org_name" Type="Edm.String" MaxLength="100" sap:label="组织名称"/>
+                <Property Name="ywparentid" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="业务父级组织编码"/>
+                <Property Name="area_acr" Type="Edm.Decimal" Precision="17" Scale="2"/>
+                <Property Name="last_class" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="是否末级"/>
+            </EntityType>
+            <EntityType Name="ZWCFM_I_PAYNATUREType" sap:label="费控管理-付款性质" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="zfkxzid"/>
+                    <PropertyRef Name="httype"/>
+                </Key>
+                <Property Name="zfkxzid" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="NonNegative" sap:label="付款性质"/>
+                <Property Name="httype" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="合同类型"/>
+                <Property Name="zfkxz" Type="Edm.String" MaxLength="50" sap:label="付款性质描述"/>
+                <Property Name="zfkxzlb" Type="Edm.String" MaxLength="20" sap:label="付款性质类别"/>
+            </EntityType>
+            <EntityType Name="ZWFM_I_FKDMXType" sap:label="付款单明细信息报表取数" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="zbx_id"/>
+                    <PropertyRef Name="zbx_item"/>
+                    <PropertyRef Name="blart"/>
+                </Key>
+                <Property Name="zbx_id" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="单号" sap:quickinfo="报销单据号"/>
+                <Property Name="zbx_item" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="报销单据行号"/>
+                <Property Name="blart" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="业务类型"/>
+                <Property Name="blarttxt" Type="Edm.String" MaxLength="60" sap:label="单据类型" sap:quickinfo="固定值的短文本"/>
+                <Property Name="area_name" Type="Edm.String" MaxLength="100" sap:label="区域公司" sap:quickinfo="组织名称"/>
+                <Property Name="company_name" Type="Edm.String" MaxLength="100" sap:label="公司" sap:quickinfo="组织名称"/>
+                <Property Name="zbx_name" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase" sap:label="主题" sap:quickinfo="报销名称"/>
+                <Property Name="zuser" Type="Edm.String" MaxLength="50" sap:display-format="UpperCase" sap:label="填报人工号" sap:quickinfo="填报人"/>
+                <Property Name="zusername" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="填报人" sap:quickinfo="申请人姓名"/>
+                <Property Name="zdepart" Type="Edm.String" MaxLength="100" sap:display-format="UpperCase" sap:label="填报人部门" sap:quickinfo="填报部门"/>
+                <Property Name="org_id" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="组织编码"/>
+                <Property Name="apv_state" Type="Edm.String" MaxLength="10" sap:label="审批状态"/>
+                <Property Name="apv_statetxt" Type="Edm.String" MaxLength="60" sap:label="审批状态" sap:quickinfo="固定值的短文本"/>
+                <Property Name="statuspay" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="支付状态"/>
+                <Property Name="statuspaytxt" Type="Edm.String" MaxLength="60" sap:label="支付状态" sap:quickinfo="固定值的短文本"/>
+                <Property Name="statusbill" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="扫描状态"/>
+                <Property Name="statusbilltxt" Type="Edm.String" MaxLength="60" sap:label="扫描状态" sap:quickinfo="固定值的短文本"/>
+                <Property Name="if_agenttxt" Type="Edm.String" MaxLength="60" sap:label="是否代办" sap:quickinfo="固定值的短文本"/>
+                <Property Name="agtdepartid" Type="Edm.String" MaxLength="100" sap:label="被代办人部门" sap:quickinfo="组织名称"/>
+                <Property Name="agt_username" Type="Edm.String" MaxLength="20" sap:label="被代办人姓名"/>
+                <Property Name="agt_user" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="被代办人工号" sap:quickinfo="被代办人"/>
+                <Property Name="ifcbtxt" Type="Edm.String" MaxLength="60" sap:label="是否超标" sap:quickinfo="固定值的短文本"/>
+                <Property Name="zyhzhmc1" Type="Edm.String" MaxLength="100" sap:label="收款户名" sap:quickinfo="收款账户户名"/>
+                <Property Name="bnk_acc1" Type="Edm.String" MaxLength="100" sap:label="收款账号"/>
+                <Property Name="bnk_name1" Type="Edm.String" MaxLength="100" sap:label="收款银行名称"/>
+                <Property Name="zzfdw" Type="Edm.String" MaxLength="100" sap:label="实际支付单位"/>
+                <Property Name="zcom" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="支付公司"/>
+                <Property Name="zcomname" Type="Edm.String" MaxLength="25" sap:label="支付公司名称"/>
+                <Property Name="zyhzhmc2" Type="Edm.String" MaxLength="100" sap:label="付款户名" sap:quickinfo="付款账户户名"/>
+                <Property Name="bnk_acc2" Type="Edm.String" MaxLength="100" sap:label="付款账号"/>
+                <Property Name="zkhh2" Type="Edm.String" MaxLength="100" sap:label="付款银行名称"/>
+                <Property Name="zbx_price" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="waers" sap:label="报销金额（合计）"/>
+                <Property Name="payment" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="waers" sap:label="实际支付金额" sap:quickinfo="实际支付"/>
+                <Property Name="waers" Type="Edm.String" MaxLength="5" sap:label="货币" sap:quickinfo="货币码" sap:semantics="currency-code"/>
+                <Property Name="zbx_num" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="发票号码"/>
+                <Property Name="zbx_code" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="发票代码"/>
+                <Property Name="bx_city" Type="Edm.String" MaxLength="50" sap:display-format="UpperCase" sap:label="目的地"/>
+                <Property Name="budget_name" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="预算科目" sap:quickinfo="预算科目名称"/>
+                <Property Name="proj_name" Type="Edm.String" MaxLength="100" sap:label="预算单元" sap:quickinfo="项目名称"/>
+                <Property Name="typetxt" Type="Edm.String" MaxLength="20" sap:label="发票类型" sap:quickinfo="发票类型名称"/>
+                <Property Name="price" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="waers" sap:label="发票金额（不含税）"/>
+                <Property Name="tax" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="waers" sap:label="税金"/>
+                <Property Name="tax_rate" Type="Edm.Decimal" Precision="5" Scale="2" sap:label="税率"/>
+                <Property Name="price_tax" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="waers" sap:label="发票金额（含税）"/>
+                <Property Name="apl_price" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="waers" sap:label="申请金额"/>
+                <Property Name="apl_pricent" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="waers" sap:label="申请金额（不含税）"/>
+                <Property Name="pay_price" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="waers" sap:label="支付金额"/>
+                <Property Name="yzfje" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="waers" sap:label="已支付金额"/>
+                <Property Name="zyzfje" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="waers" sap:label="已止付金额" sap:quickinfo="止付金额"/>
+                <Property Name="zfzt" Type="Edm.String" MaxLength="60" sap:label="支付状态" sap:quickinfo="固定值的短文本"/>
+                <Property Name="erdat" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="创建日期" sap:quickinfo="记录创建日期"/>
+                <Property Name="erzet" Type="Edm.Time" Precision="0" sap:label="创建时间" sap:quickinfo="输入时间"/>
+                <Property Name="apdat" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="提交审批日期"/>
+                <Property Name="appdt" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="审批通过时间" sap:quickinfo="审批通过日期"/>
+                <Property Name="prcit" Type="Edm.String" MaxLength="32" sap:display-format="UpperCase" sap:label="BPM单号" sap:quickinfo="K2审批流程实例ID"/>
+                <Property Name="zjk_id" Type="Edm.String" sap:label="借款单号"/>
+                <Property Name="totaldebt" Type="Edm.Decimal" Precision="24" Scale="3" sap:unit="waers" sap:label="待还款金额"/>
+                <Property Name="zprice" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="waers" sap:label="本次核销借款"/>
+                <Property Name="zpayreq" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="资金付款单"/>
+                <Property Name="zpaydate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="付款日期" sap:quickinfo="类型 DATS 的字段"/>
+                <Property Name="zsx_id" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="事项单据号"/>
+            </EntityType>
+            <EntityType Name="ZWFM_I_FKDMX1Type" sap:label="付款单明细信息报表" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="docnr"/>
+                    <PropertyRef Name="pbillid"/>
+                    <PropertyRef Name="blart"/>
+                    <PropertyRef Name="zitem"/>
+                    <PropertyRef Name="nline"/>
+                </Key>
+                <Property Name="docnr" Type="Edm.String" Nullable="false" MaxLength="24" sap:label="付款单号" sap:quickinfo="单据编码"/>
+                <Property Name="pbillid" Type="Edm.String" Nullable="false" MaxLength="50" sap:display-format="UpperCase" sap:label="应付账单" sap:quickinfo="应付账单编号"/>
+                <Property Name="blart" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="单据类型" sap:quickinfo="业务类型"/>
+                <Property Name="zitem" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="行项目号"/>
+                <Property Name="nline" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="行号"/>
+                <Property Name="blarttxt" Type="Edm.String" MaxLength="60" sap:label="单据类型" sap:quickinfo="固定值的短文本"/>
+                <Property Name="area_name" Type="Edm.String" MaxLength="100" sap:label="区域公司" sap:quickinfo="组织名称"/>
+                <Property Name="company_name" Type="Edm.String" MaxLength="100" sap:label="公司" sap:quickinfo="组织名称"/>
+                <Property Name="bktxt" Type="Edm.String" MaxLength="100" sap:label="主题" sap:quickinfo="单据名称"/>
+                <Property Name="usid" Type="Edm.String" MaxLength="12" sap:label="填报人工号" sap:quickinfo="填报人ID"/>
+                <Property Name="usnam" Type="Edm.String" MaxLength="20" sap:label="创建人" sap:quickinfo="填报人姓名"/>
+                <Property Name="usnamdp" Type="Edm.String" MaxLength="20" sap:label="填报人部门"/>
+                <Property Name="org_id" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="组织编码"/>
+                <Property Name="payamt" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="waers" sap:label="申请金额" sap:quickinfo="本次付款金额"/>
+                <Property Name="waers" Type="Edm.String" MaxLength="5" sap:label="货币" sap:quickinfo="货币码" sap:semantics="currency-code"/>
+                <Property Name="apv_state" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:text="apv_statetxt" sap:label="审批状态" sap:quickinfo="状态"/>
+                <Property Name="apv_statetxt" Type="Edm.String" MaxLength="60" sap:label="审批状态" sap:quickinfo="固定值的短文本"/>
+                <Property Name="isdftxt" Type="Edm.String" MaxLength="60" sap:label="是否代付" sap:quickinfo="固定值的短文本"/>
+                <Property Name="bzjlxtxt" Type="Edm.String" MaxLength="60" sap:label="保证金类型" sap:quickinfo="固定值的短文本"/>
+                <Property Name="zzbj" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="waers" sap:label="保证金" sap:quickinfo="质保金"/>
+                <Property Name="qkxzid" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:text="qkxz" sap:label="请款性质"/>
+                <Property Name="qkxz" Type="Edm.String" MaxLength="20" sap:label="请款性质" sap:quickinfo="请款性质描述"/>
+                <Property Name="qkxzmxtxt" Type="Edm.String" MaxLength="60" sap:label="请款性质明细" sap:quickinfo="固定值的短文本"/>
+                <Property Name="qkxzmx" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:text="qkxzmxtxt" sap:label="请款性质明细"/>
+                <Property Name="zfkxzid" Type="Edm.String" MaxLength="3" sap:display-format="NonNegative" sap:label="付款性质"/>
+                <Property Name="zfkxz" Type="Edm.String" MaxLength="50" sap:label="付款性质" sap:quickinfo="付款性质描述"/>
+                <Property Name="statushx" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:text="statushxtxt" sap:label="核销状态"/>
+                <Property Name="statushxtxt" Type="Edm.String" MaxLength="60" sap:label="核销状态" sap:quickinfo="固定值的短文本"/>
+                <Property Name="yjdpsj" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="预计核销日期" sap:quickinfo="预计到票时间"/>
+                <Property Name="statuspay" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:text="statuspaytxt" sap:label="支付状态"/>
+                <Property Name="statuspaytxt" Type="Edm.String" MaxLength="60" sap:label="支付状态" sap:quickinfo="固定值的短文本"/>
+                <Property Name="ifzftxt" Type="Edm.String" MaxLength="60" sap:label="是否需要支付" sap:quickinfo="固定值的短文本"/>
+                <Property Name="statusbill" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:text="statusbilltxt" sap:label="扫描状态"/>
+                <Property Name="statusbilltxt" Type="Edm.String" MaxLength="60" sap:label="扫描状态" sap:quickinfo="固定值的短文本"/>
+                <Property Name="zsszq" Type="Edm.String" MaxLength="6" sap:label="所属账期"/>
+                <Property Name="zzfdw" Type="Edm.String" MaxLength="100" sap:label="实际支付单位"/>
+                <Property Name="bukrszf" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="支付公司"/>
+                <Property Name="bukrszftxt" Type="Edm.String" MaxLength="100" sap:label="支付公司" sap:quickinfo="支付公司描述"/>
+                <Property Name="zyhzh1" Type="Edm.String" MaxLength="100" sap:label="支付账号" sap:quickinfo="银行账号1"/>
+                <Property Name="zkhh1" Type="Edm.String" MaxLength="100" sap:label="支付银行" sap:quickinfo="开户行名称1"/>
+                <Property Name="zlifnr" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="供应商" sap:quickinfo="供应商或债权人的帐号"/>
+                <Property Name="zlfname" Type="Edm.String" MaxLength="100" sap:label="供应商" sap:quickinfo="供应商名称"/>
+                <Property Name="zyhzhmc2" Type="Edm.String" MaxLength="100" sap:label="收款户名" sap:quickinfo="银行账户名称2"/>
+                <Property Name="zkhh2" Type="Edm.String" MaxLength="100" sap:label="收款银行" sap:quickinfo="开户行2"/>
+                <Property Name="zyhzh2" Type="Edm.String" MaxLength="100" sap:label="收款账号" sap:quickinfo="银行账号2"/>
+                <Property Name="zsfhmd" Type="Edm.String" MaxLength="2" sap:label="是否黑名单"/>
+                <Property Name="zfphm" Type="Edm.String" MaxLength="20" sap:label="发票号码"/>
+                <Property Name="zfpcode" Type="Edm.String" MaxLength="30" sap:label="发票代码"/>
+                <Property Name="budgetid" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="预算科目编码"/>
+                <Property Name="proj_id" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="预算单元"/>
+                <Property Name="budget_name" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="预算科目" sap:quickinfo="预算科目名称"/>
+                <Property Name="proj_name" Type="Edm.String" MaxLength="255" sap:label="预算单元" sap:quickinfo="预算单元名称"/>
+                <Property Name="bukrscdtxt" Type="Edm.String" MaxLength="100" sap:label="承担公司" sap:quickinfo="承担公司描述"/>
+                <Property Name="ctype" Type="Edm.String" MaxLength="5" sap:text="ctypetxt" sap:label="发票类型"/>
+                <Property Name="ctypetxt" Type="Edm.String" MaxLength="60" sap:label="发票类型" sap:quickinfo="固定值的短文本"/>
+                <Property Name="price" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="waers" sap:label="发票金额（不含税）"/>
+                <Property Name="tax" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="waers" sap:label="税金"/>
+                <Property Name="tax_rate" Type="Edm.Decimal" Precision="5" Scale="2" sap:label="税率"/>
+                <Property Name="price_tax" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="waers" sap:label="发票金额（含税）"/>
+                <Property Name="apl_price" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="waers" sap:label="申请金额"/>
+                <Property Name="zapl_price" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="waers" sap:label="申请金额（本币）"/>
+                <Property Name="apl_pricent" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="waers" sap:label="申请金额（不含税）"/>
+                <Property Name="payprice" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="waers" sap:label="支付金额"/>
+                <Property Name="paystatus" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:text="paystatustxt" sap:label="支付状态"/>
+                <Property Name="paystatustxt" Type="Edm.String" MaxLength="60" sap:label="支付状态" sap:quickinfo="固定值的短文本"/>
+                <Property Name="yzfje" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="waers" sap:label="已支付金额"/>
+                <Property Name="zyzfje" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="waers" sap:label="已止付金额" sap:quickinfo="止付金额"/>
+                <Property Name="zdhxje" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="waers" sap:label="待核销金额"/>
+                <Property Name="erzet" Type="Edm.Time" Precision="0" sap:label="创建时间" sap:quickinfo="输入时间"/>
+                <Property Name="erdat" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="创建日期" sap:quickinfo="记录创建日期"/>
+                <Property Name="apdat" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="提交审批日期1" sap:quickinfo="提交审批日期"/>
+                <Property Name="appdt" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="审批通过时间" sap:quickinfo="审批通过日期"/>
+                <Property Name="yid" Type="Edm.String" MaxLength="50" sap:label="外部系统单据号" sap:quickinfo="原系统单据号"/>
+                <Property Name="zpayreq" Type="Edm.String" MaxLength="18" sap:label="资金付款单号" sap:quickinfo="资金付款单"/>
+                <Property Name="zpaydate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="支付日期" sap:quickinfo="类型 DATS 的字段"/>
+                <Property Name="zfxdh" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="发薪单号"/>
+                <Property Name="prcit" Type="Edm.String" MaxLength="32" sap:display-format="UpperCase" sap:label="BPM单号" sap:quickinfo="K2审批流程实例ID"/>
+                <Property Name="htno" Type="Edm.String" MaxLength="50" sap:display-format="UpperCase" sap:label="合同编号"/>
+                <Property Name="orno" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="订单编号" sap:quickinfo="订单编码"/>
+                <Property Name="zsx_id" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="事项编号" sap:quickinfo="事项单据号"/>
+            </EntityType>
+            <EntityContainer Name="ZWFM_098_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZWCBC_I_DD07VTEXT" EntityType="ZWFM_098_SRV.ZWCBC_I_DD07VTEXTType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZWCBG_I_BUDGETITEM" EntityType="ZWFM_098_SRV.ZWCBG_I_BUDGETITEMType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZWCBG_I_BUDGETUNIT" EntityType="ZWFM_098_SRV.ZWCBG_I_BUDGETUNITType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZWCFM_I_BUDGETITEM" EntityType="ZWFM_098_SRV.ZWCFM_I_BUDGETITEMType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZWCFM_I_BUDGETUNIT" EntityType="ZWFM_098_SRV.ZWCFM_I_BUDGETUNITType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZWCFM_I_PAYNATURE" EntityType="ZWFM_098_SRV.ZWCFM_I_PAYNATUREType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZWFM_I_FKDMX" EntityType="ZWFM_098_SRV.ZWFM_I_FKDMXType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZWFM_I_FKDMX1" EntityType="ZWFM_098_SRV.ZWFM_I_FKDMX1Type" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotations Target="ZWFM_098_SRV.ZWFM_098_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZWFM_098_SRV.ZWFM_098_SRV_Entities/ZWFM_I_FKDMX" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="zjk_id"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SearchExpression"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>zjk_id</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="http://wsap-s4-dev.xinchengyue.com:8000/sap/opu/odata/sap/ZWFM_098_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://wsap-s4-dev.xinchengyue.com:8000/sap/opu/odata/sap/ZWFM_098_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
